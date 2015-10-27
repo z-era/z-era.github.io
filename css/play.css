@@ -53,9 +53,9 @@ body{
 	margin-left:-100px;
 }
 #loadButton{
-	width:0;
+	/*
 	border:none;
-	outline: none;
+	outline: none;*/
 }
 #progressbar{
     display: none;
