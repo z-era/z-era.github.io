@@ -67,7 +67,7 @@ function initialPlayData(){
 
 function gameOverFunc(){
 	   gameOver = true;
-     boom.bombScore = [];
+     boom.bombScore = 0;
      scoreIndex = 0;
 
      gameOverPage.style.display = 'block';
@@ -110,6 +110,7 @@ function calculateScore(){
 
 function calculateMoreScore(){
      score += highScores[data_number];
+
      scoreShow.innerHTML = score;
      data_number ++;
 }
