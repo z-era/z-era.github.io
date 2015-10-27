@@ -26,7 +26,7 @@ var boom = new Boom('Plus','mainPage'),
     highScores = [10,50,100,200,500,1000,1500,3000,5000],
 
     //game
-    velocity = 150,
+    velocity = 100,
     gameTime = 60,
 
     // progressbar
