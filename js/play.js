@@ -53,7 +53,7 @@ function initinalGameData(){
        boom.elementTime = residueTime;
 
        context.strokeStyle  = '#d5d2d8';
-       context.fillStyle = 'rgba(136,244,111,0)';
+       context.fillStyle = 'rgba(0,0,0,0.3)';
        boom.disapearNumContext.strokeStyle = context.strokeStyle;
        boom.disapearNumContext.fillStyle = context.fillStyle;
 

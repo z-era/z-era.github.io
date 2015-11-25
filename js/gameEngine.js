@@ -344,7 +344,7 @@ function NumberDisper(name,canvasId){
         this.disapearing = false;
 
         //disapear background color
-        this.DISAPEAR_BACKGROUN_COLOR = '#c1bcbc';
+        this.DISAPEAR_BACKGROUN_COLOR = '#c4c2c2';
 
         //number slice 
         this.allSlices =[[],[],[],[],[]];
@@ -693,7 +693,7 @@ function Boom(name,canvasId){
 
        this.boom = false;
        this.boomVelocity = 2000;
-       this.boomBackground = "#888789";
+       this.boomBackground = "rgb(159,159,159)";
        
        this.bombingProp = [];
        this.bombingLevel = 0;
@@ -788,6 +788,7 @@ Boom.prototype.pixelsPerFrameBoom=function(velocity){
 };
 
 Boom.prototype.produceBigBombs = function(data_number){
+
         var bombLevel,bombData,rows;
         bombData = this.produceBomb();
         bombLevel = this.bombingLevel;
@@ -1001,6 +1002,7 @@ Boom.prototype.produceBomb8 =function(bombData,bombLevel){
               this.initialBL8(bombData,this.bombL89);
               this.initialCS8();
         }else{
+             console.log('dd');
              this.produceBomb9(bombData,bombLevel);
         } 
 };
@@ -1541,7 +1543,7 @@ Boom.prototype.controlWitchBoom=function(data_number){
         //}else{ 
                  // this.controlWitchBoom4(data_number);
        // }
-       this.controlWitchBoom4(7);
+       this.controlWitchBoom4(9);
        
 };
 
