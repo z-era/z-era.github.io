@@ -1002,7 +1002,7 @@ Boom.prototype.produceBomb8 =function(bombData,bombLevel){
               this.initialBL8(bombData,this.bombL89);
               this.initialCS8();
         }else{
-             console.log('dd');
+
              this.produceBomb9(bombData,bombLevel);
         } 
 };
