@@ -184,7 +184,7 @@ context.canvas.height = document.documentElement.clientHeight - 200;
 boom.disapearNumCanvas.width = context.canvas.width;
 boom.disapearNumCanvas.height = context.canvas.height;
 
-context.font ="500 80px Helvetica";
+context.font ="500 30px Helvetica";
 context.textAlign = 'center';
 context.textBaseline = 'middle';
 
