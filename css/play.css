@@ -6,7 +6,6 @@ html{
 body{
 	/*background:-webkit-gradient(linear,left top,
 		left bottom,from(#3b8cf1),to(#08fbf8));*/
-    height:100%;
 
     background-color: red;
 	background:url(../img/header.png) left top no-repeat;
@@ -62,7 +61,7 @@ body{
 	position:absolute;
 	left:50%;
 	top:60%;
-	margin-left:-110px;
+	margin-left:-140px;
 }
 
 #loadButton{
@@ -107,7 +106,7 @@ body{
 	position: absolute;
 	left:0;
 	bottom:0;
-	font-size: 48px;
+	font-size: 32px;
 	text-align: center;
 	background-color: #0559f3;
 	border:none;
@@ -116,24 +115,24 @@ body{
 
 #highestScore{
 	margin:7% auto;
-	font-size: 85px;
+	font-size: 34px;
 	text-align: center;
 	color:#22ebf8;
 }
 #highestScoreText{
 	display: block;
-	font-size:50px;
+	font-size:30px;
 	color:#031b3e;
 }
 
 #nowScores{
     margin:-5% auto;
-    font-size: 85px;
+    font-size: 30px;
     text-align: center;
     color:#a11cad;
 }
 #nowScoresText{
 	display: block;
-	font-size:45px;
+	font-size:24px;
 	color:#f5e213;
 }
