@@ -1543,7 +1543,7 @@ Boom.prototype.controlWitchBoom=function(data_number){
         //}else{ 
                  // this.controlWitchBoom4(data_number);
        // }
-       this.controlWitchBoom4(9);
+       this.controlWitchBoom4(7);
        
 };
 
