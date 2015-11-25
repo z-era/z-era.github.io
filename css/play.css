@@ -177,14 +177,14 @@ body{
 	position:absolute;
 	left:50%;
 	top:60%;
-	margin-left:-70px;
+	margin-left:-90px;
 }
 
 #loadButton{
 
-	padding:10px 36px;
+	padding:10px 44px;
 	font-family: Arial;
-	font-size:80px;
+	font-size:88px;
 	color:#08fb24;
 	background:-webkit-gradient(linear,left top,
 		left bottom,form(#2ea3f5),to(#47b2fd));
