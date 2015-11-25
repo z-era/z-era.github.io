@@ -344,7 +344,7 @@ function NumberDisper(name,canvasId){
         this.disapearing = false;
 
         //disapear background color
-        this.DISAPEAR_BACKGROUN_COLOR = '#888789';
+        this.DISAPEAR_BACKGROUN_COLOR = '#c1bcbc';
 
         //number slice 
         this.allSlices =[[],[],[],[],[]];
