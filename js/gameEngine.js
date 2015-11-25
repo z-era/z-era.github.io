@@ -25,12 +25,12 @@ function Game(name,canvasId){
 	   this.rank = 5;
 	   this.row = 0;
 
-	   //number
+	   //number           
 	   this.numColors = ['#f31328','#f33991',"#f47dc9","#f410a1",
 	                     '#f410ec',"#f98ff5","#e30cf6","#e379ec",
 	                     '#b412f7','#9312f7',"#419ff6","#88c1f7",
 	                     '#76e8f9',"#23f4bc","#06f733","#77f28e",
-	                     '#befc28','#e6fc28','#fcf428','#fcbe28'];
+	                     '#41fc28','#28befc','#000','#fcbe28'];
 	   this.offsetNum = [];
 	   this.hideNum = [];
      this.offsetColor = [];
@@ -802,6 +802,7 @@ Boom.prototype.produceBombs = function(data_number){
         this.boomNowTime=0;
         bombData = this.produceBomb();
         bombLevel = this.bombingLevel;
+        console.log(5);
         if(bombLevel<=5){
                 this.bombScore = this.row*(this.bombScorePerGrip+
                              (bombLevel-4)*15)*data_number;
@@ -1534,12 +1535,14 @@ Boom.prototype.animation=function(time){
 
  //important  .................................................      
 Boom.prototype.controlWitchBoom=function(data_number){
-        this.checkPropIsInPath();
-        if(data_number<=3){
-                 this.executeBombOrNo(data_number);
-        }else{ 
-                 this.controlWitchBoom4(data_number);
-        }
+       this.checkPropIsInPath();
+        //if(data_number<=3){
+        //         this.executeBombOrNo(data_number);
+        //}else{ 
+                 // this.controlWitchBoom4(data_number);
+       // }
+       this.controlWitchBoom4(7);
+       
 };
 
 Boom.prototype.executeBombOrNo = function(){
@@ -1613,7 +1616,7 @@ Boom.prototype.producePropOrBomb = function(data_number){
        }else{
               this.boom = true; 
               if(data_number<8){
-                      this.produceBigBombs(data_number);
+                      //this.produceBigBombs(data_number);
                       this.produceBombs(data_number);
               }else{
                      this.produceBigBombs(data_number);

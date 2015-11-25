@@ -1,4 +1,4 @@
-#mainPage{
+/*#mainPage{
 }
 
 body{
@@ -7,6 +7,134 @@ body{
 .headerMessage{
 	width:100%;
 	height:160px;
+}
+
+/*Time.................................................*/
+/*#time{
+	width:60px;
+	height:60px;
+	position:absolute;
+	left:20px;
+	top:40px;
+	font:50px '微软雅黑';
+	color:red;
+	text-align: center;
+	border:3px solid #d8d0d0;
+	border-radius: 20px;
+	font-weight: 700;
+}*/
+
+
+/*score ..............................................*/
+/*#Scores{
+	position:absolute;
+    right:20px;
+    top:40px;
+    font:50px '微软雅黑';
+    font-weight: 700;
+    color:#0df118;
+}*/
+
+
+/*login  ............................................*/
+/*#loadPage{
+	width:100%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+    background:url(../img/buttonBackground.png) left center no-repeat;
+    background-size:cover;
+}
+#loginButtonDiv{
+	position:absolute;
+	left:50%;
+	top:60%;
+	margin-left:-100px;
+}
+#loadButton{
+	
+	border:none;
+	outline: none;
+}
+#progressbar{
+    display: none;
+	width:90%;
+	height:15px;
+	position: absolute;
+	bottom:25%;
+	margin-left:5%;
+}*/
+
+/*gameOver .............................................*/
+/*
+#gameOver{
+	display: none;
+	width:85%;
+	height:30%;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-top:-42%;
+	margin-left:-42.5%;
+	background:url(../img/over.png) left center no-repeat;
+	font-family: '微软雅黑';
+}
+
+#playAgainButton{
+	width:100%;
+	height:120px;
+	position: absolute;
+	left:0;
+	bottom:0;
+	font-size: 48px;
+	text-align: center;
+	background-color: #0559f3;
+	border:none;
+	color:#FFF;
+}
+
+#highestScore{
+	margin:7% auto;
+	font-size: 85px;
+	text-align: center;
+	color:#22ebf8;
+}
+#highestScoreText{
+	display: block;
+	font-size:50px;
+	color:#031b3e;
+}
+
+#nowScores{
+    margin:-5% auto;
+    font-size: 85px;
+    text-align: center;
+    color:#a11cad;
+}
+#nowScoresText{
+	display: block;
+	font-size:45px;
+	color:#f5e213;
+}*/
+
+#mainPage{
+}
+
+body{
+	/*background:-webkit-gradient(linear,left top,
+		left bottom,from(#3b8cf1),to(#08fbf8));*/
+    height:100%;
+
+    background-color: red;
+	background:url(../img/header.png) left top no-repeat;
+	background-size:cover;
+	
+}
+.headerMessage{
+	width:100%;
+	height:160px;
+	border:2px solid #000;
 }
 
 /*Time.................................................*/
@@ -43,7 +171,9 @@ body{
 	position: absolute;
 	left:0;
 	top:0;
-    background:url(../img/buttonBackground.png) left center no-repeat;
+    /*background:url(../img/buttonBackground.png) left center no-repeat;*/
+    background:-webkit-gradient(linear,left top,left bottom,
+    	from(#1de7f4),to(#a9f3f8));
     background-size:cover;
 }
 #loginButtonDiv{
@@ -52,11 +182,19 @@ body{
 	top:60%;
 	margin-left:-100px;
 }
+
 #loadButton{
-	/*
-	border:none;
-	outline: none;*/
+
+	padding:6px 32px;
+	font-family: Arial;
+	font-size:30px;
+	color:#08fb24;
+	background:-webkit-gradient(linear,left top,
+		left bottom,form(#2ea3f5),to(#47b2fd));
+    border:1px solid #41f556;
+    box-shadow: 1px 1px 10px #1fda35;
 }
+
 #progressbar{
     display: none;
 	width:90%;
@@ -76,6 +214,7 @@ body{
 	top:50%;
 	margin-top:-42%;
 	margin-left:-42.5%;
+	box-shadow:;
 	background:url(../img/over.png) left center no-repeat;
 	font-family: '微软雅黑';
 }
