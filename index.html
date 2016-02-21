@@ -1,44 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-  <title>亦点</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/play.css">
+	<title> star demo </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href='http://fonts.useso.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="resource/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/cs-select.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/cs-skin-underline.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/cs-skin-circular.css">
+
 </head>
 <body>
-    <div class="headerMessage">
-          <!-- Scores  -->
-          <div id="Scores"></div>
-
-          <!-- Time -->
-          <div id="time"></div>
-    </div>
-    <canvas id="mainPage"></canvas>
     
-    <!-- progressbar -->
-    <div id="loadPage">
-         <div id="loginButtonDiv">
-             <!--  <span id="loadButton"><img src="img/button.png"></span> -->
-              <span id="loadButton">Play</span>
-         </div>
-         <div id="progressbar"></div>
+    <div id="musics">
+        <select class="cs-select cs-skin-underline">
+            <option value="" disabled selected>Background music</option>
+            <option value="1">The King - VIXX</option>
+            <option value="2">God Is a Girl - Groove Coverage</option>
+            <option value="3">情人节的夜晚 - 本兮,小贱</option>
+            <option value="4">爱的魔法 - 金莎</option>
+            <option value="5">蜀绣 - 李宇春</option>
+            <option value="6">晴天 - 刘瑞琦</option>
+            <option value="7">遇见 - 孙燕姿</option>
+            <option value="8">素颜 - 许嵩,何曼婷</option>
+            <option value="9">冬天的秘密 - 周传雄</option>
+            <option value="10">再见 - 张震岳</option>
+        </select>
     </div>
 
-    <!-- gameOver -->
-    <div id="gameOver">
-         
-         <div id="highestScore"><span id="highestScoreText">最高分</span>999</div>
-         
-         <div id="nowScores"><span id="nowScoresText">本次得分</span>99</div>
-         
-         <button id="playAgainButton">Play Again</button>
+    <div id ="gameLevels" >
+        <select class="cs-select cs-skin-circular">
+            <option value="" disabled selected>Select an activity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+    </div>
+    
+    <div id="info" >
+        <h3>游戏说明</h3>
+        <span>选择歌曲，在一首歌的时间内，通过点击“星球”收集能量，使暗藏在星空中的“动物”显现出来。前面两个关卡为普通关卡，后面六个为星座关卡。游戏结束时，可以一键分享到朋友圈。</span>
     </div>
 
-    <script src="js/requestNextAnimationFrame.js"></script>
-    <script src="js/gameEngine.js"></script>
-    <script src="js/COREHTML5.js"></script>
-    <script src="js/play.js"></script>
+    <!-- <div id="starButton">
+        <span>开始游戏</span>
+    </div>
+    -->
+    <script src="resource/js/login.js"></script>
+    <script src="resource/js/classie.js"></script>
+    <script src="resource/js/selectFx.js"></script>
+
+    <script>
+
+        (function() {
+
+            [].slice.call( document.querySelectorAll( 'select.cs-skin-underline' ) ).forEach( function(el) {    
+                new SelectFx(el);
+            } );
+
+            [].slice.call( document.querySelectorAll( 'select.cs-skin-circular' ) ).forEach( function(el) {    
+                new SelectFx(el, {
+                    stickyPlaceholder: false,
+                    onChange: function(val){
+                        var img = document.createElement('img');
+                        img.src = 'resource/img/'+val+'.png';
+                        img.onload = function() {
+
+                            document.querySelector('#gameLevels span.cs-placeholder').style.backgroundImage = 'url(resource/img/'+val+'.png)';
+
+                        };
+                    }
+                });
+            } );
+
+           
+
+        })();
+
+    </script>
 </body>
 </html>

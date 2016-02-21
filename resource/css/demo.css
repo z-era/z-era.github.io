@@ -1,0 +1,126 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	margin:0;
+	padding:0;
+	background: url( "../img/login.jpg");
+	background-size: cover;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+    overflow: hidden;
+}
+
+#musics{
+
+	margin: 10px 0 0 8px;
+}
+
+a {
+	color: #1e6fa4;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #125480;
+	outline: none;
+}
+
+/*游戏介绍*/
+#info{
+
+	width: 20%;
+	position: absolute;
+	top:10px;
+	right:10px;
+
+}
+
+#info h3{
+	
+	text-align:center;
+}
+
+#info span{
+    line-height: 30px;
+    text-decoration: underline;
+}
+
+/*游戏关卡*/
+#gameLevels{
+    
+    /*width:500px;*/
+	position:absolute;
+	left:62%;
+	top: 36%;
+}
+
+#gameLevels span.cs-placeholder {
+
+	background-position: 50% 120%;
+}
+
+/*游戏开始按钮*/
+
+#starButton {
+
+	width: 80px;
+	height: 40px;
+
+	position:absolute;
+	left: 43%;
+	top: 80%;
+    
+	text-align: center;
+	line-height: 40px;
+
+	border:2px solid #0000ff;
+	border-radius: 20px;
+	box-shadow: 1px 1px 3px 4px #3d0c5d;
+
+	background-color: rgba(0,0,0,0.6);
+
+}
+#starButton span{
+	cursor: pointer;
+}
+
+@media screen and (max-width: 30em) {
+
+	body::before,
+	body::after {
+		display: none !important;
+	}
+
+	body {
+		border: none !important;
+		padding: 0 !important;
+	}
+
+	.codrops-header h1 {
+		font-size: 2em;
+	}
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
+
+
+
