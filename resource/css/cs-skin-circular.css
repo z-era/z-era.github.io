@@ -167,3 +167,74 @@ div.cs-skin-circular {
 	background-color: transparent;
 	opacity: 0.7;
 }
+
+@media screen and ( min-width: 212px){/*213px显示屏样式 LG Optimus One*/
+
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+
+}
+@media screen and ( min-width: 319px){/*320px显示屏样式 苹果4/4S/5C/5S黑莓Z30 */
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+
+}
+@media screen and ( min-width: 359px){/*360px显示屏样式 索尼Z1*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 383px){/*384px显示屏样式 黑莓Z10 谷歌 Nexus 6 LG Optimus G*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 399px){/*399px显示屏样式 三星galaxyNote*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 414px){/*414px显示屏样式 苹果6plus*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 423px){/*424px显示屏样式 LG 4X */
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 479px){/*480px显示屏样式 索尼MT27i Xperia sola*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 539px){/*640px显示屏样式 摩托罗拉Droid3/4/Razr Atrix 4g*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 639px){/*640px显示屏样式*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+@media screen and ( min-width: 640px){/*640px以上显示屏样式*/
+
+	div.cs-skin-circular {
+		font-size: 2.5em;
+	}
+}
+
