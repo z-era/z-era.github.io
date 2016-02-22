@@ -325,8 +325,8 @@ var Common = {
 
         var cloud = new THREE.PointCloud( geom, material );
         cloud.sortParticles = true;
-        var x = ( v3.x / this.w ) * 45;
-        var y = ( v3.y / this.h ) * 22;
+        var x = ( v3.x / this.w ) * this.viewW;
+        var y = ( v3.y / this.h ) * this.viewH;
         // cloud.position.set( v3.x, v3.y, 0 );
         cloud.position.set( x, y, 0 );
         cloud.scale.set( scale, scale, scale );
@@ -392,7 +392,7 @@ var Common = {
             Math.random()*this.w*2 - this.w,
             Math.random()*this.h*2 - this.h,
             -Math.random()*1500);
-        var scale = Math.random()*0.001 + 0.000001;
+        var scale = Math.random()*0.001 + 0.00001;
         planet.scale.set( scale, scale, scale );
         
         return planet;
@@ -429,8 +429,8 @@ var Common = {
         var data = GameLevel.addPictureToBG( this.currentLocal );
         this.pattern = data.pattern;
 
-        var x = 45 * ((data.patPosition.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / this.w;
-        var y = 22 * ((this.pattern.geometry.parameters.height/2 - data.patPosition.y)*2 + this.pattern.position.y) / this.h;
+        var x = this.viewW * ((data.patPosition.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / this.w;
+        var y = this.viewH * ((this.pattern.geometry.parameters.height/2 - data.patPosition.y)*2 + this.pattern.position.y) / this.h;
 
         this.patPosition.set( x, y, 0 );
  
@@ -466,7 +466,7 @@ var Common = {
                     Math.random()*self.w*2 - self.w,
                     Math.random()*self.h*2 - self.h,
                     -Math.random()*1500);
-                    var scale = Math.random()*0.001 + 0.000001;
+                    var scale = Math.random()*0.001 + 0.00001;
                     e.scale.set( scale, scale, scale );
 
                 }
