@@ -133,6 +133,10 @@ function createHeart( ){
     ];
 
     var context = canvas.getContext('2d');
+    
+    var scale = window.innerWidth*0.366/500;
+
+    context.scale( scale, scale );
   
     //画线 
     drawLine(heartPoints);
@@ -294,37 +298,23 @@ function createHeart( ){
         
         context.restore();
         
-        // imgCanvas.src = canvas.toDataURL();
-        heartCtx.clearRect( 0, 0, heartCanvas.width, heartCanvas.height );
-        heartCtx.drawImage( canvas, 0, 0, heartCanvas.width, heartCanvas.height );
+        // heartCtx.clearRect( 0, 0, heartCanvas.width, heartCanvas.height );
+        // heartCtx.drawImage( canvas, 0, 0, heartCanvas.width, heartCanvas.height );
         requestAnimationFrame( animate );
         
     }
 
-    // var imgCanvas = new Image();
 
-    // imgCanvas.src = canvas.toDataURL();
+    // var heartCanvas = document.createElement('canvas');
+    // heartCanvas.width = window.innerWidth * 0.366;
+    // heartCanvas.height = heartCanvas.width*7/5;
 
-    // imgCanvas.onload = function(){
+    // var heartCtx = heartCanvas.getContext('2d');
 
-    //     imgCanvas.style.display = 'block'
-    //     imgCanvas.style.width = '256px';
-    //     imgCanvas.style.height = '712px';
-        
-    //     document.body.appendChild( imgCanvas );
-
-
-         
-    // };
-
-    var heartCanvas = document.createElement('canvas');
-    heartCanvas.width = window.innerWidth * 0.366;
-    heartCanvas.height = heartCanvas.width*7/5;
-
-    var heartCtx = heartCanvas.getContext('2d');
-
-    heartCtx.drawImage( canvas, 0, 0, heartCanvas.width, heartCanvas.height );
+    // heartCtx.drawImage( canvas, 0, 0, heartCanvas.width, heartCanvas.height );
     
-    return heartCanvas;
+    // return heartCanvas;
+
+    return canvas;
 
 }

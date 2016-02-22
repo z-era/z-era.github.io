@@ -618,34 +618,42 @@ var GameOver = {
         btn2.style.borderRight = '2px solid #fff';
         
         var self = this;
-        btn1.addEventListener( 'click', function(){ 
+
+        btn1.addEventListener( 'mousedown', function( event ){
 
             self.restart();
 
+        }, false );
+
+        btn1.addEventListener( 'touchstart', function( event ){
+
+            self.restart();
+
+        }, false );
+
+        btn2.addEventListener( 'mousedown', function(){
+
+            self.share();
+            
         });
 
-        btn2.addEventListener( 'click', function(){
+        btn2.addEventListener( 'touchstart', function( event ){
 
-            wx.onMenuShareTimeline({
+            self.share();
 
-                title: '给你一首歌的时间', // 分享标题
-                link: '', // 分享链接
-                imgUrl: '', // 分享图标
-                success: function () { 
-                     // 用户确认分享后执行的回调函数
-                },
-                cancel: function () { 
-                     // 用户取消分享后执行的回调函数
-                }
+        }, false );
 
-            });
-        });
-
-        btn3.addEventListener( 'click', function(){
+        btn3.addEventListener( 'mousedown', function(){
             
             window.location.href = 'index.html';
 
         });
+
+        btn3.addEventListener( 'touchstart', function( event ){
+
+            window.location.href = 'index.html';
+
+        }, false );
 
         div.appendChild( btn1 );
         div.appendChild( btn2 );
@@ -657,9 +665,26 @@ var GameOver = {
 
     restart: function(){
         
-        // console.log('1ddd');
         document.body.removeChild( this.wrapDom );
         window.location.reload();
+
+    },
+
+    share: function(){
+
+        wx.onMenuShareTimeline({
+
+            title: '给你一首歌的时间', // 分享标题
+            link: '', // 分享链接
+            imgUrl: '', // 分享图标
+            success: function () { 
+                 // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                 // 用户取消分享后执行的回调函数
+            }
+
+        });
 
     },
 
