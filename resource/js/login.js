@@ -1,7 +1,7 @@
 
 function initLogin(){
     
-    var wrap = document.getElementById('wraper');
+    var wrap = document.querySelector('#wraper');
     wrap.style.height = window.innerHeight;
     alert( window.innerHeight );
     alert( window.height() );
@@ -69,7 +69,7 @@ function onDocumentClick(){
 function createHeart( ){
     var canvas = document.createElement('canvas');
   
-    document.getElementById('wraper').appendChild( canvas );
+    document.querySelector('#wraper').appendChild( canvas );
 
     canvas.width = 512;
     canvas.height = window.height;

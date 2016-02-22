@@ -28,9 +28,9 @@ body {
 #wraper{
 
 	background: url( "../img/login.jpg");
-	background-size: contain;
+	background-size: cover;
 	overflow: hidden;
-	
+
 }
 
 #musics{
