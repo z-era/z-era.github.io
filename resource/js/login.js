@@ -67,7 +67,7 @@ function createHeart( ){
     document.body.appendChild( canvas );
 
     canvas.width = 512;
-    canvas.height = 712;
+    canvas.height = window.height;
     canvas.style.zIndex = 1;
 
     var heartPoints = [
