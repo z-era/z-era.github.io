@@ -6,8 +6,8 @@ var Common = {
     h: window.innerHeight,
     
     //透视可视范围
-    viewW: Math.round(window.innerWidth * 0.033),
-    viewH: Math.round( window.innerHeight * 0.033),
+    viewW: Math.round( window.innerWidth * 0.033 ),
+    viewH: Math.round( window.innerHeight * 0.033 ),
     //wrapper
     container: null,
 
@@ -101,6 +101,9 @@ var Common = {
             self.initData();
 
         }
+
+        alert( this.viewW );
+        alert( this.viewH );
         
     },
 
