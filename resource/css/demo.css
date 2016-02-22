@@ -14,10 +14,13 @@
 .clearfix:after { clear: both; }
 
 body {
+
+	width:100%;
+	height:auto;
 	margin:0;
 	padding:0;
 	background: url( "../img/login.jpg");
-	background-size: cover;
+	/*background-size: cover;*/
 	color: #fff;
 	font-weight: 400;
 	font-size: 1em;

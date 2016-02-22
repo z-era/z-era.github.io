@@ -1,6 +1,6 @@
 
 function initLogin(){
-
+    
     var container = document.createElement('div');
     container.style.position = 'absolute';
     container.style.left = (window.innerWidth - 512)/2 - 100 + 'px';
