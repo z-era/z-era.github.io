@@ -93,16 +93,8 @@
                     }
                 });
             } );
-
-            if( window.orientation === 0 ){
-
-                window.orientation = 90;
-
-            }else if( window.orientation === 180 ){
-
-                window.orientation = -90;
-                
-            }
+            window.resizeTo(screen.availWidth,screen.availHeight);window.moveTo(0,0);
+            console.log( window.innerWidth, window.innerHeight );
 
         })();
 

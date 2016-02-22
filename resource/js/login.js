@@ -19,7 +19,21 @@ function initLogin(){
 
 }
 
-window.onload  = initLogin;
+window.onload  = function(){
+
+    if( window.orientation === 0 ){
+
+        window.orientation = 90;
+
+    }else if( window.orientation === 180 ){
+
+        window.orientation = -90;
+        
+    }
+
+    initLogin();
+
+};
 
 function onDocumentClick(){
     
