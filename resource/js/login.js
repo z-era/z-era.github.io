@@ -1,12 +1,17 @@
 
 function initLogin(){
     
+    var wrap = document.getElementById('wraper');
+    wrap.style.height = window.innerHeight;
+    alert( window.innerHeight );
+    alert( window.height() );
+
     var container = document.createElement('div');
     container.style.position = 'absolute';
     container.style.left = (window.innerWidth - 512)/2 - 100 + 'px';
     container.style.top = (window.innerHeight - 512)/2 - 80 + 'px';
     
-    document.body.appendChild( container );
+    wrap.appendChild( container );
 
     container.appendChild( createHeart() );
 
@@ -64,7 +69,7 @@ function onDocumentClick(){
 function createHeart( ){
     var canvas = document.createElement('canvas');
   
-    document.body.appendChild( canvas );
+    document.getElementById('wraper').appendChild( canvas );
 
     canvas.width = 512;
     canvas.height = window.height;
