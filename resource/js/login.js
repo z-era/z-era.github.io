@@ -1,6 +1,8 @@
 
 function initLogin(){
-
+    
+    // .style.maxWidth = '300px';
+    // document.querySelector('.cs-skin-underline').style.maxWidth = '300px';
     var container = document.createElement('div');
     container.style.position = 'absolute';
     container.style.left = window.innerWidth*0.317 - 50 + 'px';
