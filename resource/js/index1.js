@@ -9,6 +9,10 @@ var GameLevel = {
     context: null,
     pattern: null,
 
+    //绘制的位置
+    patternLocW: Math.round( window.innerWidth * 0.586 ),
+    patternLocH: Math.round( window.innerHeight * 0.75 ),
+
     //星球数量
     planetCount: 18,
 
@@ -53,7 +57,7 @@ var GameLevel = {
         });
 
         this.pattern = new THREE.Mesh( new THREE.PlaneGeometry( 512*this.scale, 512*this.scale ), materialColor );
-        this.pattern.position.set( -800, -500, -10000 );
+        this.pattern.position.set( - this.patternLocW, - this.patternLocH , -10000 );
         this.pattern.scale.set( 2, 2, 1 );
 
         // var x = 45 * ((Sources.CattleFocus.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / Data.w;
