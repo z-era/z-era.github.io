@@ -4,7 +4,10 @@ var Common = {
     //window width and height
     w: window.innerWidth,
     h: window.innerHeight,
-
+    
+    //透视可视范围
+    viewW: Math.round(window.innerWidth * 0.033),
+    viewH: Math.round( window.innerHeight * 0.033),
     //wrapper
     container: null,
 
@@ -322,8 +325,8 @@ var Common = {
 
         var cloud = new THREE.PointCloud( geom, material );
         cloud.sortParticles = true;
-        var x = ( v3.x / this.w ) * 45;
-        var y = ( v3.y / this.h ) * 22;
+        var x = ( v3.x / this.w ) * this.viewW;
+        var y = ( v3.y / this.h ) * this.viewH;
         // cloud.position.set( v3.x, v3.y, 0 );
         cloud.position.set( x, y, 0 );
         cloud.scale.set( scale, scale, scale );
@@ -426,8 +429,8 @@ var Common = {
         var data = GameLevel.addPictureToBG( this.currentLocal );
         this.pattern = data.pattern;
 
-        var x = 45 * ((data.patPosition.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / this.w;
-        var y = 22 * ((this.pattern.geometry.parameters.height/2 - data.patPosition.y)*2 + this.pattern.position.y) / this.h;
+        var x = this.viewW * ((data.patPosition.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / this.w;
+        var y = this.viewH * ((this.pattern.geometry.parameters.height/2 - data.patPosition.y)*2 + this.pattern.position.y) / this.h;
 
         this.patPosition.set( x, y, 0 );
  
@@ -634,7 +637,7 @@ var GameOver = {
         btn2.addEventListener( 'mousedown', function(){
 
             self.share();
-            
+
         });
 
         btn2.addEventListener( 'touchstart', function( event ){

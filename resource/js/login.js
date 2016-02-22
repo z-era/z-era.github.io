@@ -10,7 +10,8 @@ function initLogin(){
     // document.body.appendChild( container );
 
     // container.appendChild( createHeart() );
-
+    
+    console.log( window.innerWidth, window.innerHeight );
     var canvas = createHeart();
     canvas.style.position = 'absolute';
     canvas.style.left = window.innerWidth*0.317 - 50 + 'px';
