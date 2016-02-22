@@ -21,16 +21,10 @@ body {
 	font-weight: 400;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
-	position: relative;
-    overflow: hidden;
-}
-
-#wraper{
 
 	background: url( "../img/login.jpg");
 	background-size: cover;
-	overflow: hidden;
-
+    overflow: hidden;
 }
 
 #musics{
@@ -65,6 +59,7 @@ a:hover, a:focus {
 }
 
 #info span{
+
     line-height: 30px;
     text-decoration: underline;
 }
@@ -72,7 +67,6 @@ a:hover, a:focus {
 /*游戏关卡*/
 #gameLevels{
     
-    /*width:500px;*/
 	position:absolute;
 	left:62%;
 	top: 36%;
@@ -91,7 +85,7 @@ a:hover, a:focus {
 	height: 40px;
 
 	position:absolute;
-	left: 43%;
+	left: 45%;
 	top: 80%;
     
 	text-align: center;

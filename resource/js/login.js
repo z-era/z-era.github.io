@@ -1,18 +1,14 @@
 
 function initLogin(){
-    
-    var wrap = document.querySelector('#wraper');
-    wrap.style.height = window.innerHeight;
-    alert( window.innerHeight );
-    alert( window.height() );
 
     var container = document.createElement('div');
     container.style.position = 'absolute';
-    container.style.left = (window.innerWidth - 512)/2 - 100 + 'px';
-    container.style.top = (window.innerHeight - 512)/2 - 80 + 'px';
+    container.style.left = window.innerWidth*0.317 - 50 + 'px';
+    container.style.top =  '0px';
     
-    wrap.appendChild( container );
+    document.body.appendChild( container );
 
+    // createHeart();
     container.appendChild( createHeart() );
 
     var btn = document.createElement('div');
@@ -69,11 +65,10 @@ function onDocumentClick(){
 function createHeart( ){
     var canvas = document.createElement('canvas');
   
-    document.querySelector('#wraper').appendChild( canvas );
+    // document.body.appendChild( canvas );
 
-    canvas.width = 512;
-    canvas.height = window.height;
-    canvas.style.zIndex = 1;
+    canvas.width = 500;
+    canvas.height = 700;
 
     var heartPoints = [
         138, 295,
@@ -297,10 +292,37 @@ function createHeart( ){
         
         context.restore();
         
+        // imgCanvas.src = canvas.toDataURL();
+        heartCtx.clearRect( 0, 0, heartCanvas.width, heartCanvas.height );
+        heartCtx.drawImage( canvas, 0, 0, heartCanvas.width, heartCanvas.height );
         requestAnimationFrame( animate );
         
     }
+
+    // var imgCanvas = new Image();
+
+    // imgCanvas.src = canvas.toDataURL();
+
+    // imgCanvas.onload = function(){
+
+    //     imgCanvas.style.display = 'block'
+    //     imgCanvas.style.width = '256px';
+    //     imgCanvas.style.height = '712px';
+        
+    //     document.body.appendChild( imgCanvas );
+
+
+         
+    // };
+
+    var heartCanvas = document.createElement('canvas');
+    heartCanvas.width = window.innerWidth * 0.366;
+    heartCanvas.height = heartCanvas.width*7/5;
+
+    var heartCtx = heartCanvas.getContext('2d');
+
+    heartCtx.drawImage( canvas, 0, 0, heartCanvas.width, heartCanvas.height );
     
-    return canvas;
+    return heartCanvas;
 
 }

@@ -19,8 +19,8 @@ div.cs-skin-circular {
 
 .cs-skin-circular > span {
 	background: transparent;
-	width: 100px;
-	height: 100px;
+	width: 3em;
+	height: 3em;
 	text-align: center;
 	padding: 0;
 	text-indent: 100%;
