@@ -1,24 +1,30 @@
 
 function initLogin(){
     
-    // .style.maxWidth = '300px';
-    // document.querySelector('.cs-skin-underline').style.maxWidth = '300px';
-    var container = document.createElement('div');
-    container.style.position = 'absolute';
-    container.style.left = window.innerWidth*0.317 - 50 + 'px';
-    container.style.top =  '0px';
+    // var container = document.createElement('div');
+    // container.style.position = 'absolute';
+    // container.style.left = window.innerWidth*0.317 - 50 + 'px';
+    // container.style.top =  '0px';
     
-    document.body.appendChild( container );
 
-    // createHeart();
-    container.appendChild( createHeart() );
+    // document.body.appendChild( container );
+
+    // container.appendChild( createHeart() );
+
+    var canvas = createHeart();
+    canvas.style.position = 'absolute';
+    canvas.style.left = window.innerWidth*0.317 - 50 + 'px';
+    canvas.style.top =  '0px';
+    document.body.appendChild( canvas );
 
     var btn = document.createElement('div');
     btn.id = 'starButton';
     btn.innerHTML = '<span>开始游戏</span>';
     btn.addEventListener('click',onDocumentClick, false );
 
-    container.appendChild( btn );
+    document.body.appendChild( btn );
+
+    // container.appendChild( btn );
 
 }
 
