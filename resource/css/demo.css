@@ -100,7 +100,7 @@ a:hover, a:focus {
 	cursor: pointer;
 }
 
-@media screen and (max-width: 30em) {
+/*@media screen and (max-width: 30em) {
 
 	body::before,
 	body::after {
@@ -121,6 +121,6 @@ a:hover, a:focus {
 	}
 
 }
-
+*/
 
 
