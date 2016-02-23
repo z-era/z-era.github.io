@@ -103,7 +103,7 @@ var GameLevel = {
         this.context.strokeStyle = 'rgb(150,197,255)';
         this.context.lineWidth = 2;
         
-        this.context.scale( this.scale, this.scale );
+        // this.context.scale( this.scale, this.scale );
 
         this.drawEye();
 
