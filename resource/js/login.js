@@ -48,7 +48,7 @@ window.onload  = function(){
 function onDocumentClick(){
     
     var music =  document.querySelector('#musics span.cs-placeholder').innerHTML;
-    if( music !== 'Background music' ){
+    if( music !== 'Background Music' ){
 
         localStorage.setItem( 'music', music );
 

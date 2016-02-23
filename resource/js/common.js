@@ -55,7 +55,10 @@ var Common = {
     BGImgURL: '',
 
     //音乐时长
-    duration: 60,
+    duration: 50,
+
+    //音乐
+    audio: null,
 
     //循环
     requestAnimate: null,
@@ -89,15 +92,18 @@ var Common = {
         var self = this;
         if(  musicURL !== 'noMusic' ){
 
-            var audio = new Audio('resource/MP3/' + musicURL + '.mp3');
-            audio.addEventListener('canplaythrough',function(){
+            this.audio = new Audio('resource/MP3/' + musicURL + '.mp3');
+            this.audio.addEventListener('canplaythrough',function(){
                 
                 self.duration = Math.floor(audio.duration);
                 self.powerArr = GameLevel.initLevel( self.duration );
-                audio.play();
                 self.Timing();
                 self.initData();
 
+                self.audio.play();
+
+                window.addEventListener( 'touchstart', this.onTourchStart, false );
+              
             });
 
         }else{
@@ -107,6 +113,14 @@ var Common = {
             self.initData();
 
         }
+
+    },
+    
+    //用户触发背景音乐开启
+    onTourchStart: function(){
+        
+        this.audio.play();
+        window.removeEventListener( 'touchstart', this.onTourchStart, false );
 
     },
 
