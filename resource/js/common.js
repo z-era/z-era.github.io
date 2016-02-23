@@ -80,7 +80,6 @@ var Common = {
         this.dispersionArr = GameLevel.dispersionArr;
         this.scale = GameLevel.scale;
 
-
         this.viewH = Math.tan( Math.PI/8 ) * 54;
         this.viewW = this.w/this.h * this.viewH;
         
@@ -99,39 +98,36 @@ var Common = {
                 
                 self.duration = Math.floor( self.audio.duration);
                 self.powerArr = GameLevel.initLevel( self.duration );
-                self.Timing();
                 self.initData();
+                
+                document.getElementById('loading').style.display = 'none';
 
                 self.audio.play();
+                self.Timing();
 
-                window.addEventListener( 'touchstart', function(){
-
-                    self.onTourchStart();
-
-                }, false );
+                window.addEventListener( 'touchstart', self.onTourchStart, false );
               
             });
 
         }else{
             
             self.powerArr = GameLevel.initLevel( self.duration );
-            this.Timing();
             self.initData();
 
+            document.getElementById('loading').style.display = 'none';
+            this.Timing();
+            
         }
+
+
 
     },
     
     //用户触发背景音乐开启
     onTourchStart: function(){
         
-        var self = this;
         this.audio.play();
-        window.removeEventListener( 'touchstart', function(){
-
-                    self.onTourchStart();
-                    
-                }, false );
+        window.removeEventListener( 'touchstart',Common.onTourchStart, false );
 
     },
 
@@ -738,6 +734,13 @@ var GameOver = {
 };
 
 window.onload = function(){
+    
+    var loading = document.createElement('div');
+    loading.id = 'loading';
+    var img = new Image();
+    img.src = 'resource/img/loading.png';
+    loading.appendChild( img );
+    document.body.appendChild( loading );
 
     Common.init();
 

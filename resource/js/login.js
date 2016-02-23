@@ -1,17 +1,6 @@
 
 function initLogin(){
     
-    // var container = document.createElement('div');
-    // container.style.position = 'absolute';
-    // container.style.left = window.innerWidth*0.317 - 50 + 'px';
-    // container.style.top =  '0px';
-    
-
-    // document.body.appendChild( container );
-
-    // container.appendChild( createHeart() );
-    
-    console.log( window.innerWidth, window.innerHeight );
     var canvas = createHeart();
     canvas.style.position = 'absolute';
     canvas.style.left = window.innerWidth*0.317 - 50 + 'px';
@@ -24,9 +13,9 @@ function initLogin(){
     btn.addEventListener('click',onDocumentClick, false );
 
     document.body.appendChild( btn );
-
-    // container.appendChild( btn );
-
+    
+    document.getElementById('loading').style.display = 'none';
+    
 }
 
 window.onload  = function(){
