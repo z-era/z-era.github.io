@@ -95,7 +95,7 @@ var Common = {
             this.audio = new Audio('resource/MP3/' + musicURL + '.mp3');
             this.audio.addEventListener('canplaythrough',function(){
                 
-                self.duration = Math.floor(audio.duration);
+                self.duration = Math.floor( self.audio.duration);
                 self.powerArr = GameLevel.initLevel( self.duration );
                 self.Timing();
                 self.initData();
