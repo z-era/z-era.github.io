@@ -50,6 +50,7 @@ var Common = {
     //planet count
     planetCount: 1,
     dispersionArr: null,
+    planetSize: Math.round( window.innerWidth * 0.072 ),
 
     //background img url
     BGImgURL: '',
@@ -79,6 +80,7 @@ var Common = {
         this.dispersionArr = GameLevel.dispersionArr;
         this.scale = GameLevel.scale;
 
+
         this.viewH = Math.tan( Math.PI/8 ) * 54;
         this.viewW = this.w/this.h * this.viewH;
         
@@ -102,7 +104,11 @@ var Common = {
 
                 self.audio.play();
 
-                window.addEventListener( 'touchstart', this.onTourchStart, false );
+                window.addEventListener( 'touchstart', function(){
+
+                    self.onTourchStart();
+
+                }, false );
               
             });
 
@@ -119,8 +125,13 @@ var Common = {
     //用户触发背景音乐开启
     onTourchStart: function(){
         
+        var self = this;
         this.audio.play();
-        window.removeEventListener( 'touchstart', this.onTourchStart, false );
+        window.removeEventListener( 'touchstart', function(){
+
+                    self.onTourchStart();
+                    
+                }, false );
 
     },
 
@@ -161,7 +172,7 @@ var Common = {
 
                     for( var i = 0; i < num; i++ ){
 
-                        var mesh = self.createPlanet( new THREE.SphereGeometry( 100, 20, 20 ) );
+                        var mesh = self.createPlanet( new THREE.SphereGeometry( this.planetSize, 20, 20 ) );
                         self.scenePlanet.add( mesh );
 
                     }
@@ -298,7 +309,7 @@ var Common = {
 
             this.createPointCloud( v3, scale );
 
-            var mesh = this.createPlanet( new THREE.SphereGeometry( 100, 20, 20 ) );
+            var mesh = this.createPlanet( new THREE.SphereGeometry( this.planetSize, 20, 20 ) );
             this.scenePlanet.add( mesh );
 
         }
@@ -713,10 +724,10 @@ var GameOver = {
 
             context.drawImage(img, 0, 0, canvas.width, canvas.height );
 
-            var w = GameLevel.canvas.width/2;
-            var h = GameLevel.canvas.height/2;
+            var w = canvas.width *0.6;
+            var h = GameLevel.canvas.height/GameLevel.canvas.width * w;
 
-            context.drawImage(GameLevel.canvas, canvas.width/2 - w, canvas.height/2 - h + 80, w*2, h*2 );
+            context.drawImage(GameLevel.canvas, canvas.width/2 - w/2, canvas.height/2 - h/3, w, h );
 
         };
 
