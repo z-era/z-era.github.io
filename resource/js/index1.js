@@ -21,7 +21,7 @@ var GameLevel = {
     rotationSpeed: 0.01,
 
     //缩放
-    scale: window.innerWidth * 0.375 / 512,
+    scale: window.innerWidth/650,
     
     //星球的分散度以及数量
     dispersionArr: [ 3, 4, 6, 4, 3 ],
@@ -56,10 +56,10 @@ var GameLevel = {
             map: self.createTexture(),
         });
 
-        this.pattern = new THREE.Mesh( new THREE.PlaneGeometry( this.scale * 512, this.scale * 512 ), materialColor );
+        this.pattern = new THREE.Mesh( new THREE.PlaneGeometry( 512, 512 ), materialColor );
         this.pattern.position.set( 0, 0 , -10000 );
         // this.pattern.position.set( - this.patternLocW, - this.patternLocH , -10000 );
-        this.pattern.scale.set( 2, 2, 1 );
+        this.pattern.scale.set( this.scale, this.scale, 1 );
 
         // var x = 45 * ((Sources.CattleFocus.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / Data.w;
         // var y = 22 * ((this.pattern.geometry.parameters.height/2 - Sources.createCattle.eye.y)*2 + this.pattern.position.y) / Data.h;
@@ -69,7 +69,7 @@ var GameLevel = {
         return {
 
             pattern: this.pattern,
-            patPosition:new THREE.Vector2( this.scale * Sources.CattleFocus.x, this.scale * Sources.CattleFocus.y )
+            patPosition:new THREE.Vector2( Sources.CattleFocus.x, Sources.CattleFocus.y )
 
         };
 
@@ -103,7 +103,7 @@ var GameLevel = {
         this.context.strokeStyle = 'rgb(150,197,255)';
         this.context.lineWidth = 2;
         
-        this.context.scale( this.scale, this.scale );
+        // this.context.scale( this.scale, this.scale );
 
         this.drawEye();
 

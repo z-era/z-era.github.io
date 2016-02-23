@@ -59,6 +59,9 @@ var Common = {
 
     //循环
     requestAnimate: null,
+    
+    //缩放
+    scale: 2,
 
     //debug
     stats: null,
@@ -71,6 +74,7 @@ var Common = {
         this.rotationSpeed = GameLevel.rotationSpeed;
         this.BGImgURL = GameLevel.BGImgURL;
         this.dispersionArr = GameLevel.dispersionArr;
+        this.scale = GameLevel.scale;
 
         this.viewH = Math.tan( Math.PI/8 ) * 54;
         this.viewW = this.w/this.h * this.viewH;
@@ -439,8 +443,8 @@ var Common = {
         var data = GameLevel.addPictureToBG( this.currentLocal );
         this.pattern = data.pattern;
 
-        var x = this.viewW * ((data.patPosition.x - this.pattern.geometry.parameters.width/2)*2 + this.pattern.position.x) / this.w;
-        var y = this.viewH * ((this.pattern.geometry.parameters.height/2 - data.patPosition.y)*2 + this.pattern.position.y) / this.h;
+        var x = this.viewW * ((data.patPosition.x - this.pattern.geometry.parameters.width/2)*this.scale + this.pattern.position.x) / this.w;
+        var y = this.viewH * ((this.pattern.geometry.parameters.height/2 - data.patPosition.y)*this.scale + this.pattern.position.y) / this.h;
 
         this.patPosition.set( x, y, 0 );
  
