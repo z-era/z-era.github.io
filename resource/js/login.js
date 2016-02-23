@@ -14,7 +14,7 @@ function initLogin(){
 
     document.body.appendChild( btn );
     
-    document.getElementById('loading').style.display = 'none';
+    document.body.removeChild( document.getElementById('loading'));
     
 }
 

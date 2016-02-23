@@ -100,7 +100,7 @@ var Common = {
                 self.powerArr = GameLevel.initLevel( self.duration );
                 self.initData();
                 
-                document.getElementById('loading').style.display = 'none';
+                document.body.removeChild( document.getElementById('loading'));
 
                 self.audio.play();
                 self.Timing();
@@ -114,9 +114,9 @@ var Common = {
             self.powerArr = GameLevel.initLevel( self.duration );
             self.initData();
 
-            document.getElementById('loading').style.display = 'none';
+            document.body.removeChild( document.getElementById('loading'));
             this.Timing();
-            
+
         }
 
 
