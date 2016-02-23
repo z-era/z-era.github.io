@@ -1,4 +1,3 @@
-    
 var Common = {
     
     //window width and height
@@ -6,8 +5,8 @@ var Common = {
     h: window.innerHeight,
     
     //透视可视范围
-    viewW: Math.round( window.innerWidth * 0.033 ),
-    viewH: Math.round( window.innerHeight * 0.033 ),
+    viewW: 45,
+    viewH: 22,
     //wrapper
     container: null,
 
@@ -72,6 +71,9 @@ var Common = {
         this.rotationSpeed = GameLevel.rotationSpeed;
         this.BGImgURL = GameLevel.BGImgURL;
         this.dispersionArr = GameLevel.dispersionArr;
+
+        this.viewH = Math.tan( Math.PI/8 ) * 54;
+        this.viewW = this.w/this.h * this.viewH;
         
         this.addMusic();
 
@@ -102,9 +104,6 @@ var Common = {
 
         }
 
-        alert( this.viewW );
-        alert( this.viewH );
-        
     },
 
     initData: function(){
@@ -346,6 +345,8 @@ var Common = {
     //active sprite
     makeSpriteMove: function( sprite ){
         
+        var self = this;
+
         sprite.geometry.vertices.forEach(function (e) {
 
             new TWEEN.Tween( e ).to( {
@@ -360,7 +361,13 @@ var Common = {
             x: this.patPosition.x,
             y: this.patPosition.y,
             z: this.patPosition.z }, 3000 )
-        .easing( TWEEN.Easing.Elastic.Out).start();
+        .easing( TWEEN.Easing.Elastic.Out)
+        .start().onComplete( function(){
+
+            self.sceneSprite.remove( sprite );
+
+        });
+        
 
     },
 
@@ -476,20 +483,6 @@ var Common = {
                 
             }
         });
-
-        this.sceneSprite.traverse(function (e) {
-
-            if (e instanceof THREE.PointCloud ) {
-                
-                if( e.position.equals( self.patPosition ) ){
-
-                    self.sceneSprite.remove( e );
-
-                }
-                
-            }
-
-        });
         
         this.render();
 
@@ -542,13 +535,6 @@ var Common = {
             }
 
             //清空能量
-            self.scenePlanet.traverse(function (e) {
-                if (e instanceof THREE.Mesh) {
-
-                    self.scenePlanet.remove( e );
-                    
-                }
-            });
             self.sceneSprite.traverse(function (e) {
 
                     self.sceneSprite.remove( e );
