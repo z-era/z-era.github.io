@@ -56,7 +56,7 @@ var GameLevel = {
             map: self.createTexture(),
         });
 
-        this.pattern = new THREE.Mesh( new THREE.PlaneGeometry( 512, 512 ), materialColor );
+        this.pattern = new THREE.Mesh( new THREE.PlaneGeometry( this.scale * 512, this.scale * 512 ), materialColor );
         this.pattern.position.set( 0, 0 , -10000 );
         // this.pattern.position.set( - this.patternLocW, - this.patternLocH , -10000 );
         this.pattern.scale.set( 2, 2, 1 );
@@ -69,7 +69,7 @@ var GameLevel = {
         return {
 
             pattern: this.pattern,
-            patPosition:new THREE.Vector2( Sources.CattleFocus.x, Sources.CattleFocus.y )
+            patPosition:new THREE.Vector2( this.scale * Sources.CattleFocus.x, this.scale * Sources.CattleFocus.y )
 
         };
 
@@ -103,7 +103,7 @@ var GameLevel = {
         this.context.strokeStyle = 'rgb(150,197,255)';
         this.context.lineWidth = 2;
         
-        // this.context.scale( this.scale, this.scale );
+        this.context.scale( this.scale, this.scale );
 
         this.drawEye();
 

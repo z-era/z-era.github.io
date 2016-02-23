@@ -55,7 +55,7 @@ var Common = {
     BGImgURL: '',
 
     //音乐时长
-    duration: 120,
+    duration: 60,
 
     //循环
     requestAnimate: null,
