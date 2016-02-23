@@ -68,7 +68,7 @@ var GameLevel = {
         return {
 
             pattern: this.pattern,
-            patPosition:new THREE.Vector2( Sources.CattleFocus.x , Sources.CattleFocus.y )
+            patPosition:new THREE.Vector2( Sources.CattleFocus.x * this.scale, Sources.CattleFocus.y * this.scale )
 
         };
 
