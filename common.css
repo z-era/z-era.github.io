@@ -14,16 +14,36 @@ html {overflow-y: scroll;}
 
 body {
 	font-family: 'Microsoft YaHei';
+	background: url(./bg.png) no-repeat;
+	background-size: cover;
+}
+
+.wrapper {
+	margin: 70px auto;
 }
 
 .wrapper  h1{
+	padding-left: 40px;
 	font-size: 30px;
     color: #fff;
     text-shadow: 1px 2px 20px green;
 }
-#musics li{
-
-    font-weight: bold;
-    font-size: 20px;
-	color: green;
+.wrapper .msg {
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 18px;
+	color: #a4de3f;
 }
+#musics {
+	margin-top: 20px;
+	margin-left: 90px;
+}
+#musics li{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 28px;
+	color: #51fc48;
+	text-shadow: 2px 2px 15px green;
+}
+
