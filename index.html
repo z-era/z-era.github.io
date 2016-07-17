@@ -1,100 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 <head>
-	<title> star demo </title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-    <meta name="screen-orientation" content="landscape">
-
-    <!-- UC强制全屏 -->
-    <meta name="full-screen" content="yes">
-    <!-- QQ强制全屏 -->
-    <meta name="x5-fullscreen" content="true">
-
-    
-    <link href='http://fonts.useso.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    
-    
-    <link rel="stylesheet" type="text/css" href="resource/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="resource/css/loading.css">
-    <link rel="stylesheet" type="text/css" href="resource/css/demo.css">
-    <link rel="stylesheet" type="text/css" href="resource/css/cs-select.css">
-    <link rel="stylesheet" type="text/css" href="resource/css/cs-skin-underline.css">
-    <link rel="stylesheet" type="text/css" href="resource/css/cs-skin-circular.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-heigth, initial-scale=1.0, user-scalable=no" >
+	<title>笑靥</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
-    
-    <div id = "loading">
-        <img src="resource/img/loading.png">
+    <div class="wrapper">
+    	<h1>笑靥的儿歌专辑</h1>
+    	<ul id="musics">
+    		<li><audio  src="m/虫儿飞.mp3"></audio>虫儿飞</li>
+    		<li><audio  src="m/春天在那里.mp3"></audio>春天在那里</li>
+    		<li><audio  src="m/蓝精灵.mp3"></audio>蓝精灵</li>
+    		<li><audio  src="m/迷路方向.mp3"></audio>迷路方向</li>
+    		<li><audio  src="m/小毛驴.mp3"></audio>小毛驴</li>
+    		<li><audio  src="m/仰望星空.mp3"></audio>仰望星空</li>
+    	</ul>
     </div>
-
-    <div id="musics">
-        <select class="cs-select cs-skin-underline">
-            <option value="" disabled selected>Background Music</option>
-            <option value="1">青花瓷 - 周杰伦</option>
-            <option value="2">God Is a Girl - Groove Coverage</option>
-            <option value="3">情人节的夜晚 - 本兮,小贱</option>
-            <option value="4">爱的魔法 - 金莎</option>
-            <option value="5">蜀绣 - 李宇春</option>
-            <option value="6">晴天 - 周杰伦</option>
-            <option value="7">断桥残雪 - 许嵩</option>
-            <option value="8">素颜 - 许嵩,何曼婷</option>
-            <option value="9">稻香 - 周杰伦</option>
-            <option value="10">再见 - 张震岳</option>
-        </select>
-    </div>
-
-    <div id ="gameLevels" >
-        <select class="cs-select cs-skin-circular">
-            <option value="" disabled selected>Select an activity</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select>
-    </div>
-    
-    <div id="info" >
-        <h3>游戏说明</h3>
-        <span>选择歌曲，在一首歌的时间内，通过点击“星球”收集能量，使暗藏在星空中的“动物”显现出来。前面两个关卡为普通关卡，后面六个为星座关卡。游戏结束时，可以一键分享到朋友圈。</span>
-    </div>
-
-    <script src="resource/js/login.js"></script>
-    <script src="resource/js/classie.js"></script>
-    <script src="resource/js/selectFx.js"></script>
-
-    <script>
-
-        (function() {
-
-            [].slice.call( document.querySelectorAll( 'select.cs-skin-underline' ) ).forEach( function(el) {    
-                new SelectFx(el);
-            } );
-
-            [].slice.call( document.querySelectorAll( 'select.cs-skin-circular' ) ).forEach( function(el) {    
-                new SelectFx(el, {
-                    stickyPlaceholder: false,
-                    onChange: function(val){
-                        var img = document.createElement('img');
-                        img.src = 'resource/img/'+val+'.png';
-                        img.onload = function() {
-
-                            document.querySelector('#gameLevels span.cs-placeholder').style.backgroundImage = 'url(resource/img/'+val+'.png)';
-
-                        };
-                    }
-                });
-            } );
-
-
-        })();
-
-    </script>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
