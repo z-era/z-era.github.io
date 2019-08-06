@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-heigth, initial-scale=1.0, user-scalable=no" >
-	<title>笑靥</title>
-	<link rel="stylesheet" type="text/css" href="common.css">
+	<meta charset="UTF-8">
+	<title>搓搓搓</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/play.css">
 </head>
 <body>
-    <div class="wrapper">
-    	<h1>笑靥的儿歌专辑</h1>
-    	<div class="msg">专业的音乐幼师,善良,活泼,细心,乖巧,美丽,炒的一手好牛排,请点击试听<br />联系电话：132*****</div>
-    	<ul id="musics">
-    		<li><audio  src="m/虫儿飞.mp3"></audio>虫儿飞</li>
-    		<li><audio  src="m/春天在那里.mp3"></audio>春天在那里</li>
-    		<li><audio  src="m/蓝精灵.mp3"></audio>蓝精灵</li>
-    		<li><audio  src="m/迷路方向.mp3"></audio>迷路方向</li>
-    		<li><audio  src="m/小毛驴.mp3"></audio>小毛驴</li>
-    		<li><audio  src="m/仰望星空.mp3"></audio>仰望星空</li>
-    	</ul>
+    <div class="headerMessage">
+          <!-- Scores  -->
+          <div id="Scores"></div>
 
+          <!-- Time -->
+          <div id="time"></div>
     </div>
-    <script type="text/javascript" src="jQuery.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <canvas id="mainPage"></canvas>
+
+    
+
+    <!-- progressbar -->
+    <div id="loadPage">
+         <div id="loginButtonDiv">
+              <button id="loadButton"><img src="img/button.png"></button>
+         </div>
+         <div id="progressbar"></div>
+    </div>
+
+    <!-- gameOver -->
+    <div id="gameOver">
+         
+         <div id="highestScore"><span id="highestScoreText">最高分</span>999</div>
+         
+         <div id="nowScores"><span id="nowScoresText">本次得分</span>99</div>
+         
+         <button id="playAgainButton">Play Again</button>
+    </div>
+
+    <script src="js/requestNextAnimationFrame.js"></script>
+    <script src="js/gameEngine.js"></script>
+    <script src="js/COREHTML5.js"></script>
+    <script src="js/play.js"></script>
 </body>
 </html>
